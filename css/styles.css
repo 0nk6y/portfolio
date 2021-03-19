@@ -1,0 +1,311 @@
+/* 全体 */
+html {
+  scroll-behavior:smooth;
+  font-family: ヒラギノ角ゴシック,Arial, Helvetica1;
+  font-weight: 200;
+}
+
+/* body */
+body {
+  margin: 0;
+  text-align: center;
+}
+
+/* h2 */
+h2 {
+  font-family: ヒラギノ角ゴシック,Arial, Helvetica1;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 0.9;
+}
+
+/* h3 */
+h3 {
+  font-family: ヒラギノ角ゴシック,Arial, Helvetica1;
+  font-size: 5px;
+  font-weight: 200;
+}
+
+/* 各トップ */
+.top-About, .top-Skills, .top-Works, .top-Future, .top-top {
+  position: relative;
+  padding: 0;
+  margin: -150px 0 200px 0;
+  padding-top: 140px;
+}
+.top-top video {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  min-width: 75%;
+  min-height: 75%;
+  z-index: -1000;
+  overflow: hidden;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* スキルの各ロゴ */
+.box {
+  text-align : center;
+  width: 210px;
+  height: 210px;
+  font-weight: 200;
+  font-size: 20px;
+  display: inline-block;
+  object-fit: cover;
+  padding: 19px;
+  margin: 19px;
+}
+.log img {
+  display: block;
+  margin: 20px auto;
+  padding: 0;
+}
+
+/* アイコン */
+.icon {
+  padding: 10;
+  border-radius: 20px;
+}
+
+/* 各タイトル */
+.上文字 {
+  font-family: ヒラギノ角ゴシック;
+  margin: 0 0 0 0;
+  font-weight: 100;
+  font-size: 130px;
+  height: 152px;
+}
+.下文字 {
+  margin: 0;
+  color: #5a5a5a;
+  font-size: 25px;
+  font-weight: 200;
+}
+
+/* フッター */
+footer {
+  padding: auto;
+  margin: auto;
+  width: 100%;
+  background-color: #202222;
+  color: #bdbaba;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* タイトル */
+.タイトル {
+  height: 200px;
+  display: block;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+/* Works */
+.作品名 {
+  color: #000000;
+  font-size: 40px;
+  font-weight: 200;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-transform:none;
+}
+.作品紹介文 {
+  margin-left: 40px;
+  text-transform:none;
+  line-height: 110%;
+  font-size: 19px;
+  font-weight: 200;
+}
+.農業, .きゃわわあいこん, .歪んだ時計台, .アニメーション {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.農業 img {
+  margin-right: 20px;
+}
+.きゃわわあいこん img, .歪んだ時計台 img, .アニメーション video  {
+  margin-right: 60px;
+}
+
+/* ヘッダー背景*/
+header {
+  z-index: 1;
+  position: sticky;
+  top: 0%;
+  background-color: #202222;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+/* ヘッダー文字 */
+.header-font {
+  margin: 0px;
+  padding: 0 20px;
+  color: #bdbaba;
+  font-size: 35px;
+  font-family: ヒラギノ角ゴシック;
+  font-weight: 100;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+/* ヘッダー文字 ホバー時アニメーション */
+a.header-font {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+a.header-font::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 75%;
+  height: 2px;
+  background: rgb(122, 204, 204);
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+}
+a.header-font:hover::after {
+  transform: scale(1, 1);
+}
+
+/* 下からふわっと現れるアニメーション */
+.js-animation {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+  transition: all 1s;
+}
+.js-animation.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+/* スクロール 促すアニメーション */
+a.scroll {
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  bottom: 0;
+  z-index: 2;
+  padding: 10px 10px 110px;
+  overflow: hidden;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 1;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  writing-mode: vertical-lr;
+}
+a.scroll::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  height: 100px;
+  background: rgb(0, 0, 0);
+}
+a.scroll::after {
+  animation: sdl 2s cubic-bezier(1, 0, 0, 1) infinite;
+}
+@keyframes sdl {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+  35% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+  35.1% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+  70%, 100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }
+}
+
+/* 開いた時アニメーション */
+.shutter {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#202222;
+  z-index:9999;
+}
+.shutter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgb(122, 204, 204);
+  width: 0;
+  height: 1px;
+}
+.shutter {
+  -webkit-animation: byeShutter 2.6s forwards;
+          animation: byeShutter 2.6s forwards;
+}
+.shutter::before {
+  -webkit-animation: shutterOpen 2.6s forwards;
+          animation: shutterOpen 2.6s forwards;
+}
+.content {
+  -webkit-animation: contentScale 2.6s forwards;
+          animation: contentScale 2.6s forwards;
+}
+@keyframes byeShutter {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+}
+@keyframes shutterOpen {
+  0% {
+    width: 0;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  90% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes contentScale {
+  70% {
+    -webkit-transform: perspective(800px) scale(0.9) rotateX(15deg);
+            transform: perspective(800px) scale(0.9) rotateX(15deg);
+  }
+  100% {
+    -webkit-transform: perspective(800px) scale(1) rotateX(0);
+            transform: perspective(800px) scale(1) rotateX(0);
+  }
+}
